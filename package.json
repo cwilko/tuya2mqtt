@@ -1,0 +1,34 @@
+{
+  "name": "tuya2mqtt",
+  "version": "1.0.0",
+  "description": "Interface betwee TUYA/Smartlife devices and MQTT",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": "./index.js",
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "engineStrict": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cwilko/tuya2mqtt"
+  },
+  "keywords": [
+    "mqtt",
+    "home",
+    "smart",
+    "tuya",
+    "smartlife"
+  ],
+  "author": "Chris Wilkinson",
+  "license": "MIT",
+  "homepage": "https://github.com/cwilko/tuya2mqtt",
+  "dependencies": {
+    "js-yaml": "^3.14.0",
+    "lgtv2": "^1.4.1",
+    "mqtt": "^2.18.0",
+    "tuyapi": "^5.3.1",
+    "yalm": "^4.1.0",
+    "yargs": "^11.0.0"
+  }
+}

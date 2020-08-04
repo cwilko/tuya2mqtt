@@ -1,0 +1,15 @@
+--- # TUYA device mappings : See https://github.com/codetheweb/tuyapi
+- name: device1
+  dps: 1
+  ip: 192.168.1.xx
+  id: xxxxxxxxxxxxxxxxx
+  key: xxxxxxxxxxxxxxxxxx
+  version: 3.3
+- name: device2
+  dps: 2
+  ip: 192.168.1.xx
+  id: xxxxxxxxxxxxxxxxx
+  key: xxxxxxxxxxxxxxxxxx
+  version: 3.3
+
+    
