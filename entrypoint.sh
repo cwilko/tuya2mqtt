@@ -1,5 +1,5 @@
 #! /bin/ash
 
-[  -z "$LGTV2MQTT_ARGS" ] && LGTV2MQTT_ARGS=""
+[  -z "$TUYA2MQTT_ARGS" ] && TUYA2MQTT_ARGS=""
 
-node index.js ${LGTV2MQTT_ARGS}
+node index.js ${TUYA2MQTT_ARGS}

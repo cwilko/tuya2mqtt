@@ -8,8 +8,13 @@ const pkg = require('./package.json');
 const fs = require('fs');
 const yaml = require('js-yaml');
 
-let fileContents = fs.readFileSync(config.file, 'utf8');
-let deviceMappings = yaml.safeLoad(fileContents);
+try {
+    let fileContents = fs.readFileSync(config.file, 'utf8');
+    let deviceMappings = yaml.safeLoad(fileContents);
+} catch (err) {
+    console.log("Could not find mappings file:", config.file);
+    let deviceMappings = []
+}
 
 let mqttConnected;
 let lastError;
