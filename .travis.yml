@@ -13,6 +13,5 @@ install:
   - docker build -t cwilko/tuya2mqtt:latest .
 
 script:
-  - docker run -d --rm cwilko/rpi-stats:latest
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push cwilko/tuya2mqtt
