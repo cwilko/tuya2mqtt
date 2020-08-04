@@ -8,18 +8,18 @@ const pkg = require('./package.json');
 const fs = require('fs');
 const yaml = require('js-yaml');
 
+log.setLevel(config.verbosity);
+
 try {
     let fileContents = fs.readFileSync(config.file, 'utf8');
     let deviceMappings = yaml.safeLoad(fileContents);
 } catch (err) {
-    console.log("Could not find mappings file:", config.file);
+    log.debug("Could not find mappings file:", config.file);
     let deviceMappings = []
 }
 
 let mqttConnected;
 let lastError;
-
-log.setLevel(config.verbosity);
 
 log.info(pkg.name + ' ' + pkg.version + ' starting');
 log.info('mqtt trying to connect', config.url);
