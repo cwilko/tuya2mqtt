@@ -15,7 +15,7 @@ const config = require('yargs')
     .default({
         u: 'mqtt://127.0.0.1',
         n: 'tuya',
-        f: 'tuya-devices.yaml'
+        f: 'tuya-devices.yaml',
         v: 'info'
     })
     .version()
