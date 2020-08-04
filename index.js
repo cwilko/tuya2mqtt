@@ -14,6 +14,7 @@ try {
     let fileContents = fs.readFileSync(config.file, 'utf8');
     let deviceMappings = yaml.safeLoad(fileContents);
 } catch (err) {
+    log.debug(err)
     log.debug("Could not find mappings file:", config.file);
     let deviceMappings = []
 }
