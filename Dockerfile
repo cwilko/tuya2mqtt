@@ -8,7 +8,7 @@ RUN mkdir -p /usr/app
 COPY . /usr/app
 WORKDIR /usr/app
 
-RUN apk add --no-cache --update git python3 make g++
+RUN apk add --no-cache --update git 
 RUN npm install --production
 
 FROM target-$TARGETARCH$TARGETVARIANT
