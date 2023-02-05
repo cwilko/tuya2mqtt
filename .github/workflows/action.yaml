@@ -27,5 +27,5 @@ jobs:
         with:
           context: .
           push: true
-          platforms: linux/arm/v7
+          platforms: linux/arm/v7, linux/arm64
           tags: ${{ github.repository }}:latest
