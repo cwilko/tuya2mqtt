@@ -1,11 +1,19 @@
-FROM arm32v7/node:alpine
+FROM arm64v8/node:alpine as target-arm64
 
-COPY qemu-arm-static /usr/bin
+FROM arm32v7/node:alpine as target-armv7
 
-RUN mkdir -p /usr/node_app
-COPY . /usr/node_app
-WORKDIR /usr/node_app
-RUN apk add --no-cache git
+FROM target-$TARGETARCH$TARGETVARIANT as builder
+
+RUN mkdir -p /usr/app
+COPY . /usr/app
+WORKDIR /usr/app
+
+RUN apk add --no-cache --update git python3 make g++
 RUN npm install --production
+
+FROM target-$TARGETARCH$TARGETVARIANT
+
+COPY --from=builder /usr/app /usr/app
+WORKDIR /usr/app
 
 CMD ["./entrypoint.sh"]
