@@ -5,6 +5,8 @@ on: [push]
 jobs:
   docker:
     runs-on: ubuntu-latest
+    env:
+      IMAGE_NAME: tuya2mqtt
     steps:
       -
         name: Checkout
@@ -27,5 +29,5 @@ jobs:
         with:
           context: .
           push: true
-          platforms: linux/arm/v7, linux/arm64
-          tags: ${{ github.repository }}:latest
+          platforms: linux/arm64, linux/amd64
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/${{ env.IMAGE_NAME }}:latest
